@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', 'Exo 2', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app { display: flex; min-height: 100vh; width: 100%; }
+.main { flex: 1; padding: 32px 36px; overflow-y: auto; min-width: 0; }
+
+/* Pages */
+.page { display: none; }
+.page.active { display: block; animation: fadeIn .25s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Page Header */
+.page-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.page-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.page-title span { color: var(--blue); }
+.page-title svg {
+  width: 28px; height: 28px;
+  stroke: var(--blue); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Utilities */
+.flex  { display: flex; align-items: center; }
+.gap6  { gap: 6px; }  .gap8  { gap: 8px; }
+.gap12 { gap: 12px; } .gap16 { gap: 16px; }
+.mb12  { margin-bottom: 12px; }
+.mb20  { margin-bottom: 20px; }
+.sep   { height: 1px; background: var(--shadow-dark); margin: 16px 0; }
+
+.txt-blue    { color: var(--blue); }
+.txt-red     { color: var(--red); }
+.txt-green   { color: var(--green); }
+.txt-warning { color: var(--warning); }
+.txt-dim     { color: var(--text-dim); }
+.txt-bright  { color: var(--text-bright); font-weight: 600; }
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 500;
+}
+.empty-state svg {
+  width: 40px; height: 40px;
+  stroke: var(--text-dim); fill: none;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  margin-bottom: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--shadow-dark); border-radius: 3px; }
